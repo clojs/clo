@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+
 var argv = process.argv;
 argv.shift();
 
@@ -41,19 +42,28 @@ function generate(module_name, module_home, config, arg){
   console.log('tpl arg=' + arg);
   
   files.forEach(function(file){
-    generate_one(module_name, module_home, file, arg)
+    generate_one(config, module_name, module_home, file, arg)
   })
 
   console.log('----------------generate end----------------');
 }
 
-function generate_one(module_name, module_home, file, arg){
+function generate_one(config, module_name, module_home, file, arg){
+  var Inflector = require('inflected');
   var tpl = require('tpl_apply');
+  
+  var file_post = file.split('.')[1];
+  var new_file = config.file_pre + Inflector.camelize(arg[0]) + config.file_post + "." + file_post
 
   var source = module_home + '/' + file
-  var dest = process.cwd() + '/' + file;
-
-  tpl.tpl_apply(source, {
-  	title: "My New Post", body: "This is my first post!"
-  }, dest);
+  var dest = process.cwd() + '/' + new_file;
+  
+  var obj_params = {}
+  for(var i=0; i < arg.length; i++){
+    var p = "arg" + i;
+    var script = "obj_params." + p + " ='" + arg[i] + "'";
+    obj_params[p] = arg[i] 
+  }
+  
+  tpl.tpl_apply(source, obj_params, dest);
 }

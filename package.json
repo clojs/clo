@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": "DEBUG=kp node test.js"
+    "test": "DEBUG=clo clo TBNetworking Login"
   },
   "preferGlobal": "true",
   "bin": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/i5ting/clo#readme",
   "dependencies": {
+    "inflected": "^1.1.6",
     "loadjson": "^1.1.2",
     "tpl_apply": "^1.0.3"
   },
