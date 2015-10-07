@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/i5ting/clo#readme",
   "dependencies": {
+    "commander": "^2.8.1",
     "inflected": "^1.1.6",
     "loadjson": "^1.1.2",
     "mkdirp": "^0.5.1",
