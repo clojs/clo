@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm publish .",
     "test": "DEBUG=clo clo TBNetworking Login",
-    "postinstall": "node post_install.js"
+    "postinstall": "node npm_callback/post_install.js"
   },
   "preferGlobal": "true",
   "bin": {
