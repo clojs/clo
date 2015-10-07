@@ -33,5 +33,6 @@ npm install -g clo
 ## Usages
 
 ```
+git clone git@github.com:clojs/TBNetworking.git ~/.clo/TBNetworking
 clo TBNetworking Login
 ```
