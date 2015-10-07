@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": "DEBUG=clo clo TBNetworking Login"
+    "test": "DEBUG=clo clo TBNetworking Login",
+    "postinstall": "node post_install.js"
   },
   "preferGlobal": "true",
   "bin": {
@@ -24,6 +25,7 @@
   "dependencies": {
     "inflected": "^1.1.6",
     "loadjson": "^1.1.2",
+    "mkdirp": "^0.5.1",
     "tpl_apply": "^1.0.3"
   },
   "devDependencies": {
