@@ -1,5 +1,7 @@
 # clo
 
+
+<img src="logo.png" width=100 height=100 />
 <!-- 创建 ~/.clo
 
 ```
