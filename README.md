@@ -18,6 +18,18 @@ clo init some_tpl
 clo init some_tpl user a:string b:integer
 ``` -->
 
+## Features
+
+- write by nodejs
+- handlebars.js for template
+- support multi files
+
+## Install
+
+```
+npm install -g clo
+```
+
 ## Usages
 
 ```
