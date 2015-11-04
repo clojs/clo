@@ -18,6 +18,8 @@ clo init some_tpl
 clo init some_tpl user a:string b:integer
 ``` -->
 
+- process.env.CLO_HOME
+
 ## Features
 
 - write by nodejs

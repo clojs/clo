@@ -13,6 +13,12 @@ argv.shift();
 var clo_home = home_dir + '/.clo'
 var module_name = argv.shift();
 
+if (process.env.CLO_HOME){
+  home_dir = process.env.CLO_HOME;
+  clo_home = home_dir;
+  console.log('CLO_HOME =' + home_dir)
+}
+
 var module_home = clo_home + '/' + module_name;
 // argv.shift();
 console.log('clo_home= ' + clo_home)
