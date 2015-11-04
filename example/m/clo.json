@@ -1,0 +1,14 @@
+{
+  "name": "clo",
+  "files":[
+    "LoginApiManager.h",
+    "LoginApiManager.m"
+  ],
+  "file_pre": "",
+  "file_post": "ApiManager",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clojs/TBNetworking/issues"
+  },
+  "homepage": "https://github.com/clojs/TBNetworking#readme"
+}

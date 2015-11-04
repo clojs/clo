@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": "DEBUG=clo clo TBNetworking Login",
+    "test": "export CLO_HOME=./example && clo m test",
     "postinstall": "node npm_callback/post_install.js"
   },
   "preferGlobal": "true",
