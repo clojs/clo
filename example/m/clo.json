@@ -1,8 +1,14 @@
 {
   "name": "clo",
   "files":[
-    "LoginApiManager.h",
-    "LoginApiManager.m"
+    {
+      "tpl":"LoginApiManager.h",
+      "folder":"app/api"
+    },
+    {  
+      "tpl":"LoginApiManager.m",
+      "folder":"app/api"
+    }
   ],
   "file_pre": "",
   "file_post": "ApiManager",

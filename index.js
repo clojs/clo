@@ -48,21 +48,34 @@ function generate(module_name, module_home, config, arg){
   console.log('tpl arg=' + arg);
   
   files.forEach(function(file){
+    
     generate_one(config, module_name, module_home, file, arg)
   })
 
   console.log('----------------generate end----------------');
 }
 
+// file = {
+// "tpl":"LoginApiManager.h",
+// "folder":"app/api"
+// }
 function generate_one(config, module_name, module_home, file, arg){
   var Inflector = require('inflected');
   var tpl = require('tpl_apply');
   
-  var file_post = file.split('.')[1];
+  if(!file.folder){
+    file.folder = process.cwd()
+  }else{
+    file.folder = process.cwd() + '/' + file.folder
+  }
+  
+  create_dir(file.folder)
+  
+  var file_post = file.tpl.split('.')[1];
   var new_file = config.file_pre + Inflector.camelize(arg[0]) + config.file_post + "." + file_post
 
-  var source = module_home + '/' + file
-  var dest = process.cwd() + '/' + new_file;
+  var source = module_home + '/' + file.tpl
+  var dest =  file.folder + '/' + new_file;
   
   var obj_params = {}
   for(var i=0; i < arg.length; i++){
@@ -72,4 +85,13 @@ function generate_one(config, module_name, module_home, file, arg){
   }
   
   tpl.tpl_apply(source, obj_params, dest);
+}
+
+function create_dir(dir){
+  var mkdirp = require('mkdirp');
+    
+  mkdirp(dir, function (err) {
+      if (err) console.error(err)
+      else console.log('pow!')
+  });
 }
